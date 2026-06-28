@@ -1,13 +1,16 @@
 import { build } from 'esbuild';
 
-await build({
+const shared = {
   entryPoints: ['src/index.ts'],
   bundle: true,
   platform: 'node',
   target: 'node18',
-  format: 'cjs',
-  outfile: 'dist/index.js',
-  logLevel: 'info',
   sourcemap: true,
+  logLevel: 'info',
   external: ['webpack', 'fast-glob', 'fs']
-});
+};
+
+await Promise.all([
+  build({ ...shared, format: 'esm', outfile: 'dist/index.js' }),
+  build({ ...shared, format: 'cjs', outfile: 'dist/index.cjs' })
+]);
