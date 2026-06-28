@@ -1,6 +1,6 @@
 {
   "name": "@JamesB0010/portfolio-website-react-gen-image-components-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Webpack plugin that generates image component files from a folder of assets.",
   "homepage": "https://github.com/JamesB0010/portfolio-website--react-gen-image-components-plugin.ts#readme",
   "bugs": {
@@ -12,7 +12,7 @@
   },
   "license": "ISC",
   "author": "JamesB0010",
-  "type": "commonjs",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
