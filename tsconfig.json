@@ -10,6 +10,8 @@
     "allowJs": true,
     "types": ["node", "webpack/module"],
     "sourceMap": true,
+    "declaration": true,
+    "declarationDir": "./dist",
     "allowImportingTsExtensions": true,
     "rewriteRelativeImportExtensions": true
   },
