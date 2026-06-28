@@ -1,15 +1,16 @@
 import type {Compiler, WebpackPluginInstance} from "webpack";
 import glob from "fast-glob";
 import fs from "fs";
+import path from "path";
 
 export class ReactGenImageComponentsPlugin implements WebpackPluginInstance {
     private imagePath: string;
-    private outputPath: string;
+    private projectRoot: string;
 
-    constructor(imagePath: string, outputPath: string)
+    constructor(imagePath: string, projectRoot: string)
     {
         this.imagePath = imagePath;
-        this.outputPath = outputPath;
+        this.projectRoot = projectRoot;
     }
 
     public apply(compiler: Compiler){
@@ -36,9 +37,9 @@ export const ${fileName}Image = () =>
     )
 }`;
 
-                fs.mkdirSync(this.outputPath, { recursive: true });
+                fs.mkdirSync(path.join(this.projectRoot, "node_modules", ".cache", "generatedImageComponents"), { recursive: true });
 
-                const tsPath = `${this.outputPath}/${fileName}Image.tsx`;
+                const tsPath = `${this.projectRoot}/${fileName}Image.tsx`;
                 
                 fs.writeFileSync(tsPath, tsContents);
             }
