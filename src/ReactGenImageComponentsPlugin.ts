@@ -35,7 +35,7 @@ export class ReactGenImageComponentsPlugin implements WebpackPluginInstance {
 import {ImgHTMLAttributes} from "react";
 
 ${comments.join("\n").slice(0, -1)}
-export const ${fileName}Image = (props: ImgHTMLAttributes<HTMLImageElement>) =>
+export const ${fileName} = (props: ImgHTMLAttributes<HTMLImageElement>) =>
 {
     return (
         <img src={${fileName}} {...props}/>
