@@ -42,7 +42,7 @@ export const ${fileName}Image = (props: ImgHTMLAttributes<HTMLImageElement>) =>
     )
 }`;
 
-                const tsPath = `${folderDestination}/${fileName}Image.tsx`;
+                const tsPath = `${folderDestination}/${fileName}.tsx`;
                 
                 fs.writeFileSync(tsPath, tsContents);
             }
